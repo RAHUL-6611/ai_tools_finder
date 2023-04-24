@@ -5,9 +5,8 @@ import { CardDetail } from "./component/componentExport";
 function App() {
   return (
     <div>
+      <Header />
       <CardDetail />
     </div>
   );
 }
-
-export default App;
