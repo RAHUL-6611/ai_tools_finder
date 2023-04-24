@@ -5,11 +5,12 @@ import NearMeIcon from "@mui/icons-material/NearMe";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import kid from "../../assets/images/kid.png";
 import image from "../../assets/images/notes-bg.png";
+import Divider from "./Divider";
 
 const CardDetail = () => {
   return (
-    <div className="container max-w-[1024px] mx-auto my-10">
-      <div className="flex gap-8">
+    <div className="container p-2 md:p-5 max-w-[1024px] mx-auto">
+      <div className="flex gap-3 md:gap-8">
         <div className="">
           <div className="h-38 w-36 p-2 bg-gray-700 rounded-xl">
             <img
@@ -34,26 +35,26 @@ const CardDetail = () => {
             <Rating name="read-only" value={3} />
             <p>3.3</p>
           </div>
-          <div className="flex gap-3 flex-wrap">
-            <span className="bg-indigo-200 px-3 py-1 text-gray-900 font-bold rounded-xl">
+          <div className="flex gap-3 flex-wrap mt-3">
+            <span className="bg-indigo-200 px-3 py-1 text-gray-900 text-sm font-bold rounded-xl">
               Youtubbe Shorts
             </span>
-            <span className="bg-indigo-200 px-3 py-1 text-gray-900 font-bold rounded-xl">
+            <span className="bg-indigo-200 px-3 py-1 text-gray-900 text-sm font-bold rounded-xl">
               Reacting Video
             </span>
-            <span className="bg-indigo-200 px-3 py-1 text-gray-900 font-bold rounded-xl">
+            <span className="bg-indigo-200 px-3 py-1 text-gray-900 text-sm font-bold rounded-xl">
               COntent Creation
             </span>
           </div>
         </div>
       </div>
       <div className="mt-10">
-        <p className="text-center font-bold">overview</p>
-        <div className="flex flex-col gap-2 mt-5">
-          <h1 className="text-3xl">
+        <Divider DividerName="overview" />
+        <div className="mt-5">
+          <h1 className="text-xl md:text-2xl lg:text-3xl ">
             Create YouTube Shorts and TikToks 10x faster with the power of AI
           </h1>
-          <p className="">Some text here</p>
+          <p className="mt-1">Some text here</p>
           <div className="mt-3">
             <img
               src={image}
@@ -62,12 +63,12 @@ const CardDetail = () => {
           </div>
         </div>
       </div>
-      <div className="mt-24">
+      {/* <div className="">
         <p className="text-center">More You might Like</p>
-      </div>
+      </div> */}
 
-      <div className="mt-24">
-        <p className="text-center">Comments</p>
+      <div className="mt-10">
+        <Divider DividerName="comments" />
 
         <div className="border border-gray-500 p-5 rounded-lg">
           <Rating name="read-only" value={3} />
