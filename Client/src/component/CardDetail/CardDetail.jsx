@@ -51,7 +51,7 @@ const CardDetail = () => {
       <div className="mt-10">
         <Divider DividerName="overview" />
         <div className="mt-5">
-          <h1 className="text-xl md:text-2xl lg:text-3xl ">
+          <h1 className="text-xl md:text-2xl ">
             Create YouTube Shorts and TikToks 10x faster with the power of AI
           </h1>
           <p className="mt-1">Some text here</p>
