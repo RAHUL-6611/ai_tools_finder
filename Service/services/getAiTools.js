@@ -17,4 +17,8 @@ const getAllAIToolsService = (searchQuery) => {
     return aiTools;
   };
 
-module.exports = { getAllAIToolsService }
+const getAiToolByIdService = (id) => {
+  return aiToolsData.find((tool) => tool.id === id);
+};
+
+module.exports = { getAllAIToolsService, getAiToolByIdService }
