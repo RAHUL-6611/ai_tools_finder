@@ -1,18 +1,21 @@
-import React from 'react'
-import './App.css';
-import Header from './components/Header';
+import { useState } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header";
+import CardDetail from "./components/CardDetail/CardDetail";
 import AiToolCard from './components/AiToolCard';
 import AiToolData from './Data/AiToolData';
 
-const App = () => {
+function App() {
   return (
     <div>
       <Header />
-      {/* Other Components Go here */}
-      {/* <AiToolCard tool={AiToolData[0]}/> */}
+      <Routes>
+        <Route path="/" element={<Header />} />
+        <Route path="/card" element={<CardDetail />} />
+      </Routes>
     </div>
   )
+
 }
-
 export default App;
-
