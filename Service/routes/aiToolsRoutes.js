@@ -1,7 +1,8 @@
 const express = require('express');
-const { getAllAITools } = require('../controllers/aiTools');
+const { getAllAITools, getAiToolById } = require('../controllers/aiTools');
 const router = express.Router();
 
 router.get('/getAllAiTools', getAllAITools);
+router.get('/getAiToolById/:id', getAiToolById);
 
 module.exports = router;
