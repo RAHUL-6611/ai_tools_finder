@@ -2,7 +2,9 @@ const express = require("express");
 const router = require("./routes/aiToolsRoutes");
 const app = express();
 const cors = require("cors");
+const connectDB = require("./db");
 
+connectDB();
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use("/api", router);
 

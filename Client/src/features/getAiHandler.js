@@ -1,14 +1,14 @@
-import React from "react";
 import { getAllAIService, getParticularAI } from "../services/getAIService";
 
 const getAiHandler = () => {
-  const getAllAI = async () => {
-    const result = await getAllAIService();
+  const getAllAI = async (search) => {
+    const result = await getAllAIService(search);
     return result;
   };
 
-  const getAI = async () => {
-    const result = await getParticularAI();
+  const getAI = async (slug) => {
+    const result = await getParticularAI(slug);
+    return result;
   };
 
   return { getAllAI, getAI };

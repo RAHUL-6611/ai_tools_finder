@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import getAiHandler from "../../features/getAiHandler";
 
-const SearchInput = () => {
+const SearchInput = ({ setGetAllTool, query, setQuery }) => {
+  const { getAllAI } = getAiHandler();
+  const [typingTimeout, setTypingTimeout] = useState(null);
+
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+    getTools();
+  };
+
+  const getTools = async () => {
+    await getAllAI(query).then((res) => setGetAllTool(res.data));
+  };
+
+  useEffect(() => {
+    console.log("use Effect in searchInut");
+    if (typingTimeout) {
+      clearTimeout(typingTimeout);
+    }
+    setTypingTimeout(
+      setTimeout(() => {
+        getTools();
+      }, 2000)
+    );
+  }, [query]);
+
   return (
-    <form>
+    <form onSubmit={formSubmitHandler}>
       <label
         for="search"
         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -33,6 +58,7 @@ const SearchInput = () => {
           class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Search"
           required
+          onChange={(e) => setQuery(e.target.value)}
         />
         <button
           type="submit"

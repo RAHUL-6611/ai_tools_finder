@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
 
 const AiToolCard = ({ tool }) => {
+  console.log(tool);
   return (
-    <div className="bg-white shadow-md rounded-md p-4 max-w-[250px] ">
+    <div
+      key={tool.slug}
+      className="bg-white shadow-md rounded-md p-4 max-w-[250px] "
+    >
       <div className="flex justify-center">
         <div className="h-32 w-32">
           <img className="object-cover" src={tool.imageUrl} alt={tool.name} />
@@ -28,7 +32,7 @@ const AiToolCard = ({ tool }) => {
 
 AiToolCard.propTypes = {
   tool: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,
